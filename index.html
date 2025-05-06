@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="style/signin.css" />
+  <body>
+    <div class="left-content">
+      <h1>glopal book</h1>
+      <p>connect with friends and the world around you on my glopal app .</p>
+    </div>
+    <div class="right-content">
+      <h2>sign up</h2>
+      <form action="pages/test.html" onsubmit="return submitfunction()">
+        <input
+          type="text"
+          id="email-phonenumber-input"
+          placeholder="enter your email or phone numper" />
+        <input
+          type="password"
+          id="password-input"
+          placeholder="enter your password"
+          onkeyup="password_check()"
+          onfocus="showinfo()" />
+        <div class="check-showpassword">
+          <input type="checkbox" id="checkbox-input" onclick="checkbox()" />
+          <label for="checkbox-input" id="show-password">show password</label>
+        </div>
+        <h4></h4>
+
+        <input type="submit" value="log in" id="submit-button" />
+      </form>
+
+      <a href="" id="forgetting-password">forgetting password ? </a>
+      <hr />
+      <button id="signup-button">
+        <a href="pages/signup.html" id="signup-link">create new account</a>
+      </button>
+      <h3><a href="">create a page</a> for celebrity , brand or business</h3>
+    </div>
+
+    <script src="js/signin.js"></script>
+  </body>
+</html>

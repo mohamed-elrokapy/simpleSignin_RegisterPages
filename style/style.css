@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: gray;
+}
+.first label,
+.second label,
+.third label {
+  display: block;
+}
+body .main {
+  width: 50%;
+  height: 80%;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 5px;
+  /* display: flex;
+  flex-direction: column; */
+}
+.header {
+  height: 15%;
+  background-color: blue;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+form {
+  margin-top: 1em;
+}
+h1 {
+  font-size: 2em;
+
+  padding: 5px;
+  color: white;
+}
+h4 {
+  word-spacing: 5px;
+  color: rgba(255, 255, 255, 0.623);
+}
+.first,
+.second,
+.third {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 0.5em;
+  background-color: white;
+}
+label {
+  color: blue;
+  font-size: 1.5em;
+}
+
+.first input,
+.second input,
+.third input {
+  width: 100%;
+  font-size: 1em;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.192);
+  height: 100%;
+  display: block;
+  padding: 7px;
+}
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 40%;
+  background-color: white;
+}
+.fifth {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1em;
+}
+/* .gender label, .gender input{
+    display: inline;
+}  */
+.gender,
+.birthdate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+}
+.male,
+.female {
+  display: flex;
+  gap: 0.5em;
+}
+.male label,
+.female label {
+  color: black;
+  font-size: 1.3em;
+}
+.buttons {
+  margin-top: 1em;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+.buttons input {
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 5px;
+  border-color: transparent;
+  color: white;
+  background-color: blue;
+  width: 15%;
+}
+.birthdate input {
+  font-size: 1.3em;
+  padding: 7px;
+  border-radius: 4px;
+  color: blue;
+  border-color: rgba(0, 0, 0, 0.192);
+}

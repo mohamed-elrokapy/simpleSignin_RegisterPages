@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <h1>sign up</h1>
+        <h4>it's quick and easy</h4>
+      </div>
+
+      <form action="../pages/test.html" onsubmit="return formsubmit()">
+        <div class="first row">
+          <div class="left">
+            <label id="user-firstname-label" for="user-firstname-input"
+              >first name :</label
+            >
+            <input
+              type="text"
+              name=""
+              id="user-firstname-input"
+              placeholder="enter your first name"
+              onkeyup="firstname()" />
+          </div>
+          <div class="right">
+            <label id="user-lastname-label" for="user-lastname-input"
+              >last name :</label
+            >
+            <input
+              type="text"
+              name=""
+              id="user-lastname-input"
+              placeholder="enter your last name"
+              onkeyup="lastname()" />
+          </div>
+        </div>
+
+        <div class="second row">
+          <div class="left">
+            <label id="user-email-label" for="user-email-input">email :</label>
+            <input
+              type="text"
+              name=""
+              id="user-email-input"
+              placeholder="enter your email"
+              onkeyup="email()" />
+          </div>
+          <div class="right">
+            <label id="user-phone-number-label" for="user-phone-number-input"
+              >phone number :</label
+            >
+            <input
+              type="text"
+              name=""
+              id="user-phone-number-input"
+              placeholder="enter your phone number"
+              onkeyup="phone()" />
+          </div>
+        </div>
+        <div class="third">
+          <div class="left">
+            <label id="user-password-label" for="user-password-input"
+              >password :</label
+            >
+            <input
+              type="password"
+              name=""
+              id="user-password-input"
+              placeholder="enter password"
+              onkeyup="password()" />
+          </div>
+          <div class="right">
+            <label
+              id="user-confirm-password-label"
+              for="user-confirm-password-input"
+              >confirm password :</label
+            >
+            <input
+              type="password"
+              name=""
+              id="user-confirm-password-input"
+              placeholder="confirm your password"
+              onkeyup="confirm()" />
+          </div>
+        </div>
+        <div class="fifth">
+          <div class="gender">
+            <label id="user-gender-label">gender :</label>
+            <div class="male">
+              <input
+                type="radio"
+                name="genderr"
+                id="user-male-gender-input"
+                onkeyup="gender()"
+                onchange="gender()"
+                onclick="gender()"
+                onblur="myblur()" />
+              <label id="user-male-gender-label" for="user-male-gender-input"
+                >male</label
+              >
+            </div>
+            <div class="female">
+              <input
+                type="radio"
+                name="genderr"
+                id="user-female-gender-input"
+                onkeyup="gender()"
+                onchange="gender()"
+                onclick="gender()"
+                onblur="myblur()" />
+              <label
+                id="user-female-gender-label"
+                for="user-female-gender-input"
+                >female</label
+              >
+            </div>
+          </div>
+          <div class="birthdate">
+            <label id="user-date-label" for="user-date-input"
+              >birth date :</label
+            >
+            <input
+              type="date"
+              id="user-date-input"
+              onchange="date()"
+              onkeyup="date()" />
+          </div>
+        </div>
+
+        <div class="buttons">
+          <input id="reset" type="reset" />
+          <input id="submit" type="submit" value="register" />
+        </div>
+      </form>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

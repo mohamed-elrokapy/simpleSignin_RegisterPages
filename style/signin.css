@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: row;
+  background-color: #00000017;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  gap: 4.5em;
+}
+.left-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 30%;
+  height: 70%;
+}
+h1 {
+  font-size: 4em;
+  color: blue;
+  margin-top: 1em;
+}
+.left-content p {
+  line-height: 1.5em;
+  font-size: 1.5em;
+}
+.right-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  background-color: white;
+  width: 30%;
+  height: 80%;
+  padding-top: 1em;
+  padding-left: 2em;
+  box-shadow: black -4px 7px 20px 1px;
+  border-radius: 7px;
+}
+h2 {
+  font-size: 1.5em;
+  margin-right: 2em;
+  text-align: center;
+  color: blue;
+}
+.right-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+h4 {
+  text-align: center;
+  padding-right: 30px;
+}
+
+.check-showpassword {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.right-content input,
+.right-content button {
+  width: 90%;
+  padding: 1em;
+  border-radius: 5px;
+  border: solid 1px #00000073;
+}
+.check-showpassword input {
+  background-color: blueviolet;
+  width: 5%;
+}
+.check-showpassword label {
+  color: blue;
+}
+#submit-button {
+  color: white;
+  background-color: blue;
+  padding: 0.8em;
+  /* margin-top: 1px; */
+  /* margin-bottom: 2px; */
+  font-size: 1em;
+}
+#forgetting-password {
+  text-align: center;
+  color: blue;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+hr {
+  background-color: rgba(255, 255, 255, 0.041);
+  text-align: center;
+  height: 3px;
+  width: 90%;
+}
+#signup-button {
+  font-size: 1em;
+  color: white;
+  background-color: green;
+}
+#signup-link {
+  text-decoration: none;
+  color: white;
+}
+h3 {
+  margin-top: 1em;
+  text-align: center;
+  margin-right: 30px;
+  font-size: 0.9em;
+}
+h3 a {
+  color: blue;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+/* #2196F3; */
