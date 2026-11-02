@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo complete | Global Book (demo)</title>
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="../style/app.css" />
+  </head>
+  <body>
+    <main class="done">
+      <div class="card card--done">
+        <p class="brand__name">Global Book</p>
+        <h1 class="card__title" id="done-title">Demo complete</h1>
+        <p id="done-text">
+          The form passed validation. This is the end of the demo.
+        </p>
+        <p class="notice" role="note">
+          <strong>Nothing happened on a server.</strong> No account exists, no
+          data was sent, and nothing, including any password, was saved in your
+          browser.
+        </p>
+        <p class="alt">
+          <a class="btn btn--primary" href="../index.html">Back to log in</a>
+          <a class="btn btn--secondary" href="signup.html">Open the sign-up form</a>
+        </p>
+      </div>
+    </main>
+    <script>
+      // Only a fixed allow-list of values is read from the URL, never user input.
+      var from = new URLSearchParams(location.search).get("from");
+      if (from === "signin") {
+        document.getElementById("done-title").textContent = "Log-in demo complete";
+        document.getElementById("done-text").textContent =
+          "The log-in form passed validation. You are not logged in anywhere, because this demo has no accounts.";
+      } else if (from === "signup") {
+        document.getElementById("done-title").textContent = "Sign-up demo complete";
+        document.getElementById("done-text").textContent =
+          "The sign-up form passed validation. No account was created, because this demo has no accounts.";
+      }
+    </script>
+  </body>
+</html>
