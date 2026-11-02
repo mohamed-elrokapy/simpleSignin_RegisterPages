@@ -3,141 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../style/style.css" />
+    <title>Sign up | Global Book (demo)</title>
+    <meta
+      name="description"
+      content="Front-end demo of a sign-up form. There is no server and no real account."
+    />
+    <link rel="stylesheet" href="../style/app.css" />
   </head>
   <body>
-    <div class="main">
-      <div class="header">
-        <h1>sign up</h1>
-        <h4>it's quick and easy</h4>
-      </div>
+    <div class="shell shell--wide">
+      <aside class="brand">
+        <div class="brand__inner">
+          <p class="brand__name">Global Book</p>
+          <h1 class="brand__title">It is quick and easy.</h1>
+          <p class="brand__demo">
+            This is a front-end demo. There is no server and no real account.
+          </p>
+          <a class="brand__back" href="../index.html">Back to log in</a>
+        </div>
+      </aside>
 
-      <form action="../pages/test.html" onsubmit="return formsubmit()">
-        <div class="first row">
-          <div class="left">
-            <label id="user-firstname-label" for="user-firstname-input"
-              >first name :</label
-            >
-            <input
-              type="text"
-              name=""
-              id="user-firstname-input"
-              placeholder="enter your first name"
-              onkeyup="firstname()" />
-          </div>
-          <div class="right">
-            <label id="user-lastname-label" for="user-lastname-input"
-              >last name :</label
-            >
-            <input
-              type="text"
-              name=""
-              id="user-lastname-input"
-              placeholder="enter your last name"
-              onkeyup="lastname()" />
-          </div>
-        </div>
+      <main class="panel">
+        <div class="card card--wide">
+          <h2 class="card__title">Sign up</h2>
 
-        <div class="second row">
-          <div class="left">
-            <label id="user-email-label" for="user-email-input">email :</label>
-            <input
-              type="text"
-              name=""
-              id="user-email-input"
-              placeholder="enter your email"
-              onkeyup="email()" />
-          </div>
-          <div class="right">
-            <label id="user-phone-number-label" for="user-phone-number-input"
-              >phone number :</label
-            >
-            <input
-              type="text"
-              name=""
-              id="user-phone-number-input"
-              placeholder="enter your phone number"
-              onkeyup="phone()" />
-          </div>
-        </div>
-        <div class="third">
-          <div class="left">
-            <label id="user-password-label" for="user-password-input"
-              >password :</label
-            >
-            <input
-              type="password"
-              name=""
-              id="user-password-input"
-              placeholder="enter password"
-              onkeyup="password()" />
-          </div>
-          <div class="right">
-            <label
-              id="user-confirm-password-label"
-              for="user-confirm-password-input"
-              >confirm password :</label
-            >
-            <input
-              type="password"
-              name=""
-              id="user-confirm-password-input"
-              placeholder="confirm your password"
-              onkeyup="confirm()" />
-          </div>
-        </div>
-        <div class="fifth">
-          <div class="gender">
-            <label id="user-gender-label">gender :</label>
-            <div class="male">
-              <input
-                type="radio"
-                name="genderr"
-                id="user-male-gender-input"
-                onkeyup="gender()"
-                onchange="gender()"
-                onclick="gender()"
-                onblur="myblur()" />
-              <label id="user-male-gender-label" for="user-male-gender-input"
-                >male</label
-              >
+          <p class="notice" role="note">
+            <strong>Demo only.</strong> Nothing you type is sent or saved, no
+            account is created, and passwords are never stored.
+          </p>
+
+          <form
+            id="signup-form"
+            class="form"
+            novalidate
+            data-success-url="welcome.html?from=signup"
+          >
+            <div class="grid">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" autocomplete="given-name" aria-describedby="first-name-error" />
+              <p class="field__error" id="first-name-error" aria-live="polite"></p>
             </div>
-            <div class="female">
-              <input
-                type="radio"
-                name="genderr"
-                id="user-female-gender-input"
-                onkeyup="gender()"
-                onchange="gender()"
-                onclick="gender()"
-                onblur="myblur()" />
-              <label
-                id="user-female-gender-label"
-                for="user-female-gender-input"
-                >female</label
-              >
+            <div class="field">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" autocomplete="family-name" aria-describedby="last-name-error" />
+              <p class="field__error" id="last-name-error" aria-live="polite"></p>
             </div>
-          </div>
-          <div class="birthdate">
-            <label id="user-date-label" for="user-date-input"
-              >birth date :</label
-            >
-            <input
-              type="date"
-              id="user-date-input"
-              onchange="date()"
-              onkeyup="date()" />
-          </div>
-        </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" autocomplete="email" aria-describedby="email-error" autocapitalize="off" spellcheck="false" />
+              <p class="field__error" id="email-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" autocomplete="tel" aria-describedby="phone-hint phone-error" />
+              <p class="field__hint" id="phone-hint">11 digits, for example 010 1234 5678.</p>
+              <p class="field__error" id="phone-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="password">
+                <input type="password" id="password" autocomplete="new-password" aria-describedby="password-hint password-error" />
+                <button type="button" class="password__toggle" data-toggle-password="password" aria-label="Show password">Show</button>
+              </div>
+              <p class="field__hint" id="password-hint">At least 8 characters.</p>
+              <p class="field__error" id="password-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="confirm-password">Confirm password</label>
+              <div class="password">
+                <input type="password" id="confirm-password" autocomplete="new-password" aria-describedby="confirm-password-error" />
+                <button type="button" class="password__toggle" data-toggle-password="confirm-password" aria-label="Show password">Show</button>
+              </div>
+              <p class="field__error" id="confirm-password-error" aria-live="polite"></p>
+            </div>
+            </div>
 
-        <div class="buttons">
-          <input id="reset" type="reset" />
-          <input id="submit" type="submit" value="register" />
+            <div class="grid">
+              <fieldset class="field choice" aria-describedby="gender-error">
+                <legend>Gender</legend>
+                <div class="choice__row">
+                  <label class="radio"><input type="radio" name="gender" id="gender-male" value="male" /> <span>Male</span></label>
+                  <label class="radio"><input type="radio" name="gender" id="gender-female" value="female" /> <span>Female</span></label>
+                </div>
+                <p class="field__error" id="gender-error" aria-live="polite"></p>
+              </fieldset>
+
+              <div class="field">
+                <label for="birth-date">Birth date</label>
+                <input type="date" id="birth-date" autocomplete="bday" min="1900-01-01" aria-describedby="birth-date-error" />
+                <p class="field__error" id="birth-date-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="reset" class="btn btn--secondary">Clear form</button>
+              <button type="submit" class="btn btn--primary">Register</button>
+            </div>
+          </form>
         </div>
-      </form>
+      </main>
     </div>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/validate.js"></script>
+    <script src="../js/forms.js"></script>
+    <script src="../js/signup.js"></script>
   </body>
 </html>

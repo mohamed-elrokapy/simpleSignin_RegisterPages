@@ -3,44 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Log in | Global Book (demo)</title>
+    <meta
+      name="description"
+      content="Front-end demo of a sign-in page. There is no server and no real account."
+    />
+    <link rel="stylesheet" href="style/app.css" />
   </head>
-  <link rel="stylesheet" href="style/signin.css" />
   <body>
-    <div class="left-content">
-      <h1>glopal book</h1>
-      <p>connect with friends and the world around you on my glopal app .</p>
-    </div>
-    <div class="right-content">
-      <h2>sign up</h2>
-      <form action="pages/test.html" onsubmit="return submitfunction()">
-        <input
-          type="text"
-          id="email-phonenumber-input"
-          placeholder="enter your email or phone numper" />
-        <input
-          type="password"
-          id="password-input"
-          placeholder="enter your password"
-          onkeyup="password_check()"
-          onfocus="showinfo()" />
-        <div class="check-showpassword">
-          <input type="checkbox" id="checkbox-input" onclick="checkbox()" />
-          <label for="checkbox-input" id="show-password">show password</label>
+    <div class="shell">
+      <aside class="brand">
+        <div class="brand__inner">
+          <p class="brand__name">Global Book</p>
+          <h1 class="brand__title">Connect with friends and the world around you.</h1>
+          <p class="brand__demo">
+            This is a front-end demo. There is no server and no real account.
+          </p>
         </div>
-        <h4></h4>
+      </aside>
 
-        <input type="submit" value="log in" id="submit-button" />
-      </form>
+      <main class="panel">
+        <div class="card">
+          <h2 class="card__title">Log in</h2>
 
-      <a href="" id="forgetting-password">forgetting password ? </a>
-      <hr />
-      <button id="signup-button">
-        <a href="pages/signup.html" id="signup-link">create new account</a>
-      </button>
-      <h3><a href="">create a page</a> for celebrity , brand or business</h3>
+          <p class="notice" role="note">
+            <strong>Demo only.</strong> Nothing you type is sent, saved or checked
+            against an account. Passwords are never stored.
+          </p>
+
+          <form
+            id="signin-form"
+            class="form"
+            novalidate
+            data-success-url="pages/welcome.html?from=signin"
+          >
+            <div class="field">
+              <label for="identifier">Email or phone number</label>
+              <input
+                type="text"
+                id="identifier"
+                autocomplete="username"
+                inputmode="email"
+                autocapitalize="off"
+                spellcheck="false"
+                aria-describedby="identifier-error"
+              />
+              <p class="field__error" id="identifier-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="password">
+                <input
+                  type="password"
+                  id="password"
+                  autocomplete="current-password"
+                  aria-describedby="password-hint password-error"
+                />
+                <button
+                  type="button"
+                  class="password__toggle"
+                  data-toggle-password="password"
+                  aria-label="Show password"
+                >
+                  Show
+                </button>
+              </div>
+              <p class="field__hint" id="password-hint">At least 8 characters.</p>
+              <p class="field__error" id="password-error" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Log in</button>
+          </form>
+
+          <hr class="divider" />
+
+          <p class="alt">
+            New here?
+            <a class="btn btn--secondary" href="pages/signup.html">Create new account</a>
+          </p>
+        </div>
+      </main>
     </div>
 
+    <script src="js/validate.js"></script>
+    <script src="js/forms.js"></script>
     <script src="js/signin.js"></script>
   </body>
 </html>

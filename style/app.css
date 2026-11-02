@@ -1,0 +1,382 @@
+:root {
+  --navy: #0d2240;
+  --sky: #9fd0ff;
+  --page: #eef2f8;
+  --card: #ffffff;
+  --ink: #14213d;
+  --muted: #4d5b73;
+  --line: #8a96ab;
+  --line-soft: #d3dae6;
+  --primary: #1f5fe0;
+  --primary-hover: #174bb4;
+  --error: #b3261e;
+  --notice-bg: #fff6d6;
+  --notice-line: #c99a14;
+  --notice-ink: #4a3a00;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.5;
+}
+
+/* Layout: brand panel on the left, form on the right. Stacks on small screens. */
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.brand {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+  padding: 1.75rem 1.25rem;
+}
+
+/* Decorative globe made of rings. Purely visual. */
+.brand::before,
+.brand::after {
+  content: "";
+  position: absolute;
+  border: 1.5px solid rgba(159, 208, 255, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.brand::before {
+  width: 26rem;
+  height: 26rem;
+  right: -9rem;
+  bottom: -11rem;
+}
+
+.brand::after {
+  width: 15rem;
+  height: 15rem;
+  right: -4rem;
+  bottom: -6rem;
+  background: radial-gradient(circle at 35% 35%, rgba(159, 208, 255, 0.18), transparent 70%);
+}
+
+.brand__inner {
+  position: relative;
+  max-width: 26rem;
+}
+
+.brand__name {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+
+.brand__title {
+  margin: 0;
+  font-size: clamp(1.6rem, 6vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brand__demo {
+  margin: 1rem 0 0;
+  color: #cfdcef;
+  font-size: 0.95rem;
+}
+
+.brand__back {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #fff;
+  text-underline-offset: 3px;
+}
+
+.panel {
+  display: grid;
+  place-items: start center;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+.card {
+  width: min(100%, 26rem);
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(13, 34, 64, 0.06), 0 12px 32px rgba(13, 34, 64, 0.08);
+}
+
+.card--wide {
+  width: min(100%, 44rem);
+}
+
+.card__title {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.notice {
+  margin: 0 0 1.25rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--notice-bg);
+  border-left: 4px solid var(--notice-line);
+  border-radius: 6px;
+  color: var(--notice-ink);
+  font-size: 0.9rem;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.field {
+  display: grid;
+  gap: 0.3rem;
+  align-content: start;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+label,
+legend {
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  height: 2.9rem;
+  padding: 0 0.8rem;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+}
+
+input[aria-invalid="true"] {
+  border-color: var(--error);
+  box-shadow: 0 0 0 1px var(--error);
+}
+
+.password {
+  position: relative;
+}
+
+.password input {
+  padding-right: 4.5rem;
+}
+
+.password__toggle {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  bottom: 0.3rem;
+  padding: 0 0.7rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--primary);
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.password__toggle:hover {
+  background: #e6eefc;
+}
+
+.field__hint,
+.field__error {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.field__hint {
+  color: var(--muted);
+}
+
+.field__error {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.field__error:empty {
+  display: none;
+}
+
+.choice__row {
+  display: flex;
+  gap: 1.25rem;
+  min-height: 2.9rem;
+  align-items: center;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.radio input {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--primary);
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2.9rem;
+  padding: 0 1.25rem;
+  font: inherit;
+  font-weight: 650;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn--primary {
+  color: #fff;
+  background: var(--primary);
+}
+
+.btn--primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn--secondary {
+  color: var(--primary);
+  background: #fff;
+  border-color: var(--primary);
+}
+
+.btn--secondary:hover {
+  background: #e6eefc;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.divider {
+  margin: 1.25rem 0;
+  border: 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.alt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.done {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.card--done {
+  width: min(100%, 32rem);
+}
+
+.card--done .brand__name {
+  color: var(--primary);
+}
+
+:focus-visible {
+  outline: 3px solid #0b57d0;
+  outline-offset: 2px;
+}
+
+.brand :focus-visible {
+  outline-color: #fff;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .shell--wide {
+    grid-template-columns: minmax(18rem, 4fr) 7fr;
+  }
+  .brand {
+    padding: 4rem 3rem;
+  }
+  .brand__inner {
+    position: sticky;
+    top: 4rem;
+  }
+  .panel {
+    place-items: center;
+    padding: 3rem 2rem;
+  }
+  .card {
+    padding: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+input[type="radio"][aria-invalid="true"] {
+  box-shadow: none;
+  outline: 2px solid var(--error);
+  outline-offset: 1px;
+}
